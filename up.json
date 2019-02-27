@@ -15,7 +15,7 @@
      "PORT" : "9988"
     },
     "hooks": {
-      "build": "GOOS=linux GOARCH=amd64 go build -o server cmd/server/*.go",
+      "build": "GOOS=linux GOARCH=amd64 go build -o server *.go",
       "clean": "rm server"
     }
   }
