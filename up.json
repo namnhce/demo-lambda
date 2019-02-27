@@ -1,0 +1,21 @@
+{
+    "name": "demo-lambda",
+    "profile": "myaccount",
+    "regions": ["ap-southeast-1"],
+    "lambda": {
+      "memory": 256,
+      "accelerate": false
+    },
+    "stages": {
+      "dev": {
+        "path": "/dev"
+      }
+    },
+    "environment": {
+     "PORT" : "9988"
+    },
+    "hooks": {
+      "build": "GOOS=linux GOARCH=amd64 go build -o server cmd/server/*.go",
+      "clean": "rm server"
+    }
+  }
